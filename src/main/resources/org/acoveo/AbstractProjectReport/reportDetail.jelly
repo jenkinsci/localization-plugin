@@ -1,0 +1,43 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout"
+		 xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+	${%Go to }<a href="http://www.translate-software.com">translate-software.com</a>${% to translate your project and receive translation updates automatically}
+	<j:if test="${!it.reportEmpty}">
+		<h1>Translations</h1>
+		<table border="1px" class="pane sortable">
+			<thead>
+				<tr>
+					<th>Language</th>
+					<th title="Percentage Translated" width="200">Percentage Translated</th>
+					<th title="Units">Units</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<th align="left">Totals</th>
+					<th align="right">${it.totals.classes}</th>
+				</tr>
+			</tfoot>
+			<tbody>
+				<j:forEach var="r" items="${it.results}">
+					<j:forEach var="l" items="${r.report.languages.stringOrLanguage}">
+						<tr>
+							<td align="left">${l.code}</td>
+							<td align="right">
+								<img class="langCompletionBar-complete" height="10" width="${l.translatedPercent * 200}" 
+									src="${rootURL}/plugin/localisation-jenkins/green-bar.png" title="Translated: ${l.translatedPercent * 100}%" alt=""></img>
+								<img class="langCompletionBar-complete" height="10" width="${(1 - l.translatedPercent) * 200}" 
+									src="${rootURL}/plugin/localisation-jenkins/red-bar.png" title="Translated: ${l.translatedPercent * 100}%" alt=""></img>
+							</td>
+							<td align="right">${l.units}</td>
+						</tr>
+					</j:forEach>
+				</j:forEach>
+			</tbody>
+		</table>
+	</j:if>
+	<j:if test="${it.reportEmpty}">
+		<p>
+			<st:include page="noReport.jelly" class="hudson.plugins.helpers.AbstractProjectAction"/>
+		</p>
+	</j:if>
+</j:jelly>

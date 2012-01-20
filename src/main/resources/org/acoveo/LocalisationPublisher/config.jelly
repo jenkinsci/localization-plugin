@@ -1,0 +1,14 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout"
+         xmlns:t="/lib/hudson" xmlns:f="/lib/form" xmlns:bh="/lib/health">
+    <f:entry title="Localisation xml report pattern"
+             description="
+             This is a file name pattern that can be used to locate the JavaNCSS xml report files
+             (for example with Maven2 use &lt;b&gt;**/target/javancss-raw-report.xml&lt;/b&gt;).
+           The path is relative to &lt;a href='ws/'&gt;the module root&lt;/a&gt; unless
+           you are using Subversion as SCM and have configured multiple modules, in which case it is
+           relative to the workspace root.&lt;br/&gt;
+           JavaNCSS must be configured to generate XML reports for this plugin to function.
+           ">
+        <f:textbox name="localisation.reportFilenamePattern" value="${instance.reportFilenamePattern}"/>
+    </f:entry>
+</j:jelly>

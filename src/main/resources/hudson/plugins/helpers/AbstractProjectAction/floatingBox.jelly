@@ -1,0 +1,27 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout"
+		xmlns:t="/lib/hudson" xmlns:f="/lib/form" xmlns:i="jelly:fmt">
+	<div style="width:500px;">
+		<j:if test="${from.graphActive}">
+				<div class="test-trend-caption">
+					${from.graphName}
+				</div>
+	
+				<st:include page="normalGraph.jelly" from="${from}"/>
+	
+				<div style="text-align:right">
+					<a href="enlargedGraph">enlarge</a>
+				</div>
+				<div style="text-align:center">
+					<h3 style="margin:0;padding:0;"><a href="http://www.translate-software.com">${%Localize your software now!}</a></h3>
+				</div>
+		</j:if>
+		<j:if test="${!from.graphActive}">
+			<div class="test-trend-caption">
+				${from.displayName}
+			</div>
+			<div style="text-align:center;">
+				<st:include page="noReport.jelly" from="${from}"/>
+			</div>
+		</j:if>
+	</div>
+</j:jelly>

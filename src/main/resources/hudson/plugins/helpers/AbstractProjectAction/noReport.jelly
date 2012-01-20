@@ -1,0 +1,6 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout"
+		xmlns:t="/lib/hudson" xmlns:f="/lib/form" xmlns:i="jelly:fmt">
+	<span class="warning">
+		${%You have to add one of our }<a href="http://www.translate-software.com/localisation/clients">${%Buildsystem plug-ins}</a>${% to your project.}
+	</span>
+</j:jelly>

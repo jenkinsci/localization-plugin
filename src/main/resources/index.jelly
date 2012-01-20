@@ -1,0 +1,6 @@
+<!--
+  This view is used to render the installed plugins page in the Jenking plugin configuration
+-->
+<div>
+	Display localization / I10N completeness and translate / localize your software automatically on <a href="http://www.translate-software.com">translate-software.com</a>.
+</div>
