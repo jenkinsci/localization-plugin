@@ -29,7 +29,17 @@
 		</repository>
 		<repository>
 			<id>acoveo-snapshotrepo</id>
+			<name>acoveo Maven2 snapshot repo</name>
+			<snapshots><enabled>true</enabled></snapshots>
+			<releases><enabled>false</enabled></releases>
 			<url>http://acoveo.com/maven2/snapshots</url>
+		</repository>
+		<repository>
+			<id>acoveo-repo</id>
+			<name>acoveo Maven2 repo</name>
+			<snapshots><enabled>false</enabled></snapshots>
+			<releases><enabled>true</enabled></releases>
+			<url>http://acoveo.com/maven2/repo</url>
 		</repository>
 	</repositories>
 
