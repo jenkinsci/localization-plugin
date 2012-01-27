@@ -1,7 +1,7 @@
 <j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout"
 		xmlns:t="/lib/hudson" xmlns:f="/lib/form" xmlns:i="jelly:fmt">
 	<div style="width:500px;">
-		<img src="http://piwik.acoveo.com/piwik/piwik.php?idsite=2&amp;rec=1&amp;action_name=jenkins" style="border:0" alt="" />
+		<img src="http://piwik.acoveo.com/piwik/piwik.php?idsite=2&amp;rec=1&amp;action_name=jenkins_floatingBox&amp;urlref=${from.rootUrlEscaped}" style="border:0" alt="" />
 		<j:if test="${!from.graphActive}">
 			<div class="test-trend-caption">${from.displayName}</div>
 			<div style="text-align:center;">
@@ -10,11 +10,9 @@
 		</j:if>
 		<j:if test="${from.graphActive}">
 			<div class="test-trend-caption">${from.graphName}</div>
+			<h4 style="margin:0;padding:0;text-align:center;"><a href="http://www.translate-software.com">${%Localize your software now!}</a></h4>
 			<st:include page="normalGraph.jelly" from="${from}"/>
 			<div style="text-align:right"><a href="enlargedGraph">enlarge</a></div>
-			<div style="text-align:center">
-				<h3 style="margin:0;padding:0;"><a href="http://www.translate-software.com">${%Localize your software now!}</a></h3>
-			</div>
 		</j:if>
 	</div>
 </j:jelly>

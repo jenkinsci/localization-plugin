@@ -1,6 +1,7 @@
 package hudson.plugins.helpers;
 
 import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
 
 import hudson.model.HealthReportingAction;
 import hudson.model.AbstractBuild;
@@ -38,6 +39,10 @@ public abstract class AbstractBuildAction<BUILD extends AbstractBuild<?, ?>> imp
 		return getDisplayName();
 	}
 
+	public String getRootUrlEscaped() throws UnsupportedEncodingException {
+		return AbstractProjectAction.getRootUrlEscapedStatic();
+	}
+	
 	public String getSummary() {
 		return "My Localisation Summary";
 	}
