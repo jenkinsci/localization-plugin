@@ -19,6 +19,11 @@
 			<name>Florian Hackenberger</name>
 		</developer>
 	</developers>
+	<scm>
+		<connection>scm:git:ssh://github.com/jenkinsci/localization-plugin.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/jenkinsci/localization-plugin.git</developerConnection>
+		<url>https://github.com/jenkinsci/localization-plugin</url>
+	</scm>
 
 	<!-- get every artifact through maven.glassfish.org, which proxies all the 
 		artifacts that we need -->
