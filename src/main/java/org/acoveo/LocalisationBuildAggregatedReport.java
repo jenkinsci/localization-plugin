@@ -349,7 +349,7 @@ public class LocalisationBuildAggregatedReport extends AbstractBuildReport<Abstr
 			AbstractBuild<?, ?> build = o.getOwner();
 			String buildLink = build.getUrl();
 			// TODO support the link properly
-			// String actionUrl = o.getTestResultAction().getUrlName();
+			// String actionUrl = o.getAction(AbstractTestResultAction.class).getUrlName();
 			// this.url = Hudson.getInstance().getRootUrl() + buildLink
 			// + actionUrl + o.getUrl();
 		}
